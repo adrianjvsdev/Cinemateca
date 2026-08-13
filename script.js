@@ -534,6 +534,80 @@
   }
 
   /* ------------------------------------------------------
+     7.5 MÚSICA DE FUNDO
+     Para trocar a música: coloque um arquivo chamado
+     "trilha.mp3" dentro de assets/audio/. Se o arquivo não
+     existir, o botão de música simplesmente não aparece.
+  ------------------------------------------------------ */
+  const VOLUME_ALVO = 0.35; // volume máximo da música (0 a 1)
+  let musicaIniciada = false;
+  let fadeIntervalId = null;
+
+  function fadeVolume(audio, de, para, duracaoMs) {
+    clearInterval(fadeIntervalId);
+    const passos = 30;
+    const incremento = (para - de) / passos;
+    const intervalo = duracaoMs / passos;
+    let atual = de;
+    audio.volume = de;
+    fadeIntervalId = setInterval(() => {
+      atual += incremento;
+      const chegou = incremento >= 0 ? atual >= para : atual <= para;
+      audio.volume = Math.min(1, Math.max(0, chegou ? para : atual));
+      if (chegou) clearInterval(fadeIntervalId);
+    }, intervalo);
+  }
+
+  function iniciarMusica() {
+    if (musicaIniciada) return;
+    musicaIniciada = true;
+    const audio = $("#musica-fundo");
+    const btn = $("#btn-musica");
+    if (!audio || !btn) return;
+
+    audio.volume = 0;
+    const promessa = audio.play();
+    if (promessa && promessa.then) {
+      promessa
+        .then(() => {
+          fadeVolume(audio, 0, VOLUME_ALVO, 2200);
+          btn.hidden = false;
+          requestAnimationFrame(() => btn.classList.add("visivel"));
+        })
+        .catch(() => {
+          // autoplay bloqueado pelo navegador ou arquivo ausente — sem música, sem problema
+          musicaIniciada = false;
+        });
+    }
+  }
+
+  function configurarControleMusica() {
+    const audio = $("#musica-fundo");
+    const btn = $("#btn-musica");
+    const icone = $("#icone-musica");
+    if (!audio || !btn) return;
+
+    audio.addEventListener("error", () => {
+      btn.hidden = true;
+    });
+
+    btn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        fadeVolume(audio, audio.volume, VOLUME_ALVO, 800);
+        btn.setAttribute("aria-pressed", "true");
+        btn.setAttribute("aria-label", "Pausar música");
+        icone.textContent = "♪";
+      } else {
+        audio.pause();
+        btn.setAttribute("aria-pressed", "false");
+        btn.setAttribute("aria-label", "Tocar música");
+        icone.textContent = "✕";
+      }
+    });
+  }
+
+  /* ------------------------------------------------------
      8. PARTÍCULAS DISCRETAS NO FUNDO
   ------------------------------------------------------ */
   function iniciarParticulas() {
@@ -593,7 +667,11 @@
     configurarModal();
     iniciarParticulas();
 
-    $("#btn-entrar").addEventListener("click", iniciarSequenciaIntro);
+    $("#btn-entrar").addEventListener("click", () => {
+      iniciarMusica();
+      iniciarSequenciaIntro();
+    });
+    configurarControleMusica();
     $("#btn-escolher").addEventListener("click", () => {
       $("#catalogo").scrollIntoView({
         behavior: reduzMovimento() ? "auto" : "smooth"

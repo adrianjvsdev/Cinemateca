@@ -15,6 +15,16 @@
 <body>
 
 <!-- ============================================
+     MÚSICA DE FUNDO
+============================================= -->
+<audio id="musica-fundo" loop preload="none">
+  <source src="assets/audio/trilha.mp3" type="audio/mpeg">
+</audio>
+<button class="controle-musica" id="btn-musica" type="button" aria-label="Pausar música" aria-pressed="true" hidden>
+  <span id="icone-musica" aria-hidden="true">♪</span>
+</button>
+
+<!-- ============================================
      BACKGROUND ATMOSFÉRICO (fixo, atrás de tudo)
 ============================================= -->
 <div class="atmosfera" aria-hidden="true">
