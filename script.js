@@ -52,8 +52,8 @@
       sinopse:
         "Depois de encontrar uma misteriosa caixa capaz de realizar um desejo, Bear decide usá-la para conquistar Nikki, a garota por quem é apaixonado. O que parecia ser a realização de um sonho, porém, rapidamente se transforma em algo muito mais sombrio e perturbador.",
       motivo:
-        "Esse aqui é bem diferente dos outros dois. É mais estranho, pesado e perturbador, mas justamente por isso acho que seria muito legal assistir com você. A ideia de alguém conseguir exatamente aquilo que deseja e descobrir que talvez não fosse tão simples assim me chamou bastante atenção. Acho que esse vai render uns bons comentários depois kkkkk.",
-      trailer: "https://www.youtube.com/watch?v=OYueQyeNgOk
+        "Esse é mais intenso, bem diferente dos outros dois. Mas acho que vale muito a pena: é sobre até onde alguém vai pra ser excelente em alguma coisa, e o preço que isso cobra. Esse provavelmente vai render uma conversa enorme depois.",
+      trailer: "https://www.youtube.com/watch?v=OYueQyeNgOk"
     },
     {
       id: "diario-de-uma-paixao",
@@ -441,7 +441,13 @@
     "Escolha um."
   ];
 
+  let introEmAndamento = false;
+
   function iniciarSequenciaIntro() {
+    if (introEmAndamento) return;
+    introEmAndamento = true;
+    iniciarMusica();
+
     const intro = $("#intro");
     const elFrase = $("[data-frase]", intro);
     intro.classList.add("ativo");
@@ -460,6 +466,15 @@
       timeouts.forEach((t) => clearTimeout(t));
     }
 
+    function tempoDeLeitura(texto, ultima) {
+      const palavras = texto.trim().split(/\s+/).length;
+      // ajuste aqui se quiser textos passando mais rápido (diminua) ou mais devagar (aumente)
+      const msPorPalavra = 260;
+      const tempoBase = 700;
+      const minimo = ultima ? 1800 : 2200;
+      return Math.max(tempoBase + palavras * msPorPalavra, minimo);
+    }
+
     function mostrarProximaFrase() {
       if (cancelado) return;
       elFrase.textContent = frasesIntro[indice];
@@ -469,7 +484,7 @@
       elFrase.classList.add("visivel");
 
       const ultima = indice === frasesIntro.length - 1;
-      const tempoVisivel = ultima ? 1300 : 1100;
+      const tempoVisivel = tempoDeLeitura(frasesIntro[indice], ultima);
 
       timeouts.push(
         setTimeout(() => {
@@ -499,6 +514,7 @@
   }
 
   function finalizarIntro() {
+    introEmAndamento = false;
     const intro = $("#intro");
     intro.classList.remove("ativo");
     intro.setAttribute("aria-hidden", "true");
@@ -513,6 +529,66 @@
     window.scrollTo({ top: 0, behavior: "auto" });
     // pequeno atraso pra garantir que o layout já existe antes de observar
     requestAnimationFrame(observarRevelacoes);
+  }
+
+  /* ------------------------------------------------------
+     7b. MÚSICA DE FUNDO
+  ------------------------------------------------------ */
+  let musicaIniciada = false;
+
+  function atualizarIconeMusica(tocando) {
+    const btn = $("#btn-musica");
+    if (!btn) return;
+    btn.setAttribute("aria-pressed", tocando ? "true" : "false");
+    btn.setAttribute("aria-label", tocando ? "Pausar música" : "Tocar música");
+    btn.classList.toggle("pausada", !tocando);
+  }
+
+  function mostrarBotaoMusica() {
+    const btn = $("#btn-musica");
+    if (!btn) return;
+    btn.hidden = false;
+    requestAnimationFrame(() => btn.classList.add("visivel"));
+  }
+
+  function iniciarMusica() {
+    if (musicaIniciada) return;
+    musicaIniciada = true;
+
+    const audio = $("#musica-fundo");
+    if (!audio) return;
+    audio.volume = 0.55;
+
+    const promessa = audio.play();
+    mostrarBotaoMusica();
+
+    if (promessa && typeof promessa.then === "function") {
+      promessa
+        .then(() => atualizarIconeMusica(true))
+        .catch(() => {
+          // navegador bloqueou o autoplay: deixa o botão pronto pra tocar no toque
+          atualizarIconeMusica(false);
+        });
+    } else {
+      atualizarIconeMusica(true);
+    }
+  }
+
+  function alternarMusica() {
+    const audio = $("#musica-fundo");
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play().then(() => atualizarIconeMusica(true)).catch(() => {});
+    } else {
+      audio.pause();
+      atualizarIconeMusica(false);
+    }
+  }
+
+  function configurarMusica() {
+    const btn = $("#btn-musica");
+    if (!btn) return;
+    btn.addEventListener("click", alternarMusica);
   }
 
   /* ------------------------------------------------------
@@ -573,6 +649,7 @@
     renderizarCatalogo();
     renderizarSessao();
     configurarModal();
+    configurarMusica();
     iniciarParticulas();
 
     $("#btn-entrar").addEventListener("click", iniciarSequenciaIntro);

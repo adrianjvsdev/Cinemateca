@@ -697,6 +697,7 @@ ul{ margin:0; padding:0; list-style:none; }
               border-color var(--t-rapida) var(--ease), box-shadow var(--t-rapida) var(--ease);
 }
 .controle-musica.visivel{ opacity: 1; transform: scale(1); }
+.controle-musica.pausada{ color: var(--c-white-faint); }
 .controle-musica:hover{
   border-color: var(--glass-border-lit);
   box-shadow: 0 0 22px rgba(179,18,42,0.25);
