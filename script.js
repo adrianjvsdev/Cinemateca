@@ -23,7 +23,7 @@
         "Depois do fim do relacionamento, Clementine apaga da memória tudo o que viveu com Joel. Arrasado, ele decide fazer o mesmo procedimento — até perceber, já no meio do processo, que não quer mais esquecer.",
       motivo:
         "Não é um filme sobre esquecer alguém. É sobre perceber que, mesmo nas partes difíceis, a gente escolheria viver tudo de novo. Acho que é um pouco sobre isso que eu queria falar com você: nem tudo numa relação precisa ser perfeito pra valer a pena guardar.",
-      trailer: "https://www.youtube.com/watch?v=07-QBnEkgXU"
+      trailer: "https://www.youtube.com/watch?v=0-sPkez7OqI"
     },
     {
       id: "interestelar",
@@ -38,22 +38,22 @@
         "Cooper deixa a Terra — e a filha — para atravessar um buraco de minhoca em busca de um novo lar para a humanidade. O tempo passa de um jeito diferente para cada um deles, e a distância vira o maior obstáculo entre os dois.",
       motivo:
         "Tem uma parte em que uma hora lá fora equivale a anos aqui, e mesmo assim ele continua escolhendo voltar. Gosto da ideia de que, não importa o tempo ou a distância, tem gente que continua importando do mesmo jeito. Queria assistir esse com você porque acho que ele fala sobre isso melhor do que eu conseguiria.",
-      trailer: "https://www.youtube.com/watch?v=2LqzF5WauAw"
+      trailer: "https://www.youtube.com/watch?v=i6avfCqKcQo"
     },
     {
       id: "obsessao",
       titulo: "Obsessão",
-      ano: 2014,
-      genero: "Drama / Música",
-      duracao: "106 min",
+      ano: 2026,
+      genero: "Terror / Suspense",
+      duracao: "108 min",
       categorias: ["top3"],
       numero: "03",
       poster: "assets/images/obsessao.jpg",
       sinopse:
-        "Andrew é um baterista de jazz determinado a ser um dos melhores da história. Fletcher, seu instrutor, o empurra além do limite — e a linha entre disciplina e obsessão vai ficando cada vez mais fina.",
+        "Depois de encontrar uma misteriosa caixa capaz de realizar um desejo, Bear decide usá-la para conquistar Nikki, a garota por quem é apaixonado. O que parecia ser a realização de um sonho, porém, rapidamente se transforma em algo muito mais sombrio e perturbador.",
       motivo:
-        "Esse é mais intenso, bem diferente dos outros dois. Mas acho que vale muito a pena: é sobre até onde alguém vai pra ser excelente em alguma coisa, e o preço que isso cobra. Esse provavelmente vai render uma conversa enorme depois.",
-      trailer: "https://www.youtube.com/watch?v=jJ8p-m2z-Ks"
+        "Esse aqui é bem diferente dos outros dois. É mais estranho, pesado e perturbador, mas justamente por isso acho que seria muito legal assistir com você. A ideia de alguém conseguir exatamente aquilo que deseja e descobrir que talvez não fosse tão simples assim me chamou bastante atenção. Acho que esse vai render uns bons comentários depois kkkkk.",
+      trailer: "https://www.youtube.com/watch?v=OYueQyeNgOk
     },
     {
       id: "diario-de-uma-paixao",
@@ -66,7 +66,7 @@
       sinopse:
         "Noah e Allie se apaixonam num verão dos anos 1940, são separados pela vida e pela diferença de classe social, e passam anos tentando — ou tentando não — voltar um para o outro.",
       motivo: "O clássico que não podia ficar de fora da nossa lista.",
-      trailer: "https://www.youtube.com/watch?v=RX4DLl1Utn0"
+      trailer: "https://www.youtube.com/watch?v=ZqN355uZj8o"
     },
     {
       id: "homem-aranha",
@@ -79,7 +79,7 @@
       sinopse:
         "Peter Parker investiga o desaparecimento do pai e, no meio do caminho, se torna o Homem-Aranha — enquanto enfrenta o Lagarto pelas ruas de Nova York.",
       motivo: "Pipoca, ação e aquele climinha de primeiro encontro entre o Peter e a Gwen.",
-      trailer: "https://www.youtube.com/watch?v=joh7Llb_3Xs"
+      trailer: "https://www.youtube.com/watch?v=6nzNdpJ3qMo"
     },
     {
       id: "homem-aranha-2",
@@ -92,7 +92,7 @@
       sinopse:
         "Peter tenta equilibrar a vida como Homem-Aranha com o relacionamento com Gwen, enquanto Electro e o Duende Verde colocam a cidade em risco.",
       motivo: "Pra continuar de onde paramos.",
-      trailer: "https://www.youtube.com/watch?v=TjHWRsQcCj4"
+      trailer: "https://www.youtube.com/watch?v=PfUDLzyC1cM"
     },
     {
       id: "castelo-animado",
@@ -105,7 +105,7 @@
       sinopse:
         "Sophie é transformada numa senhora idosa por uma bruxa e vai parar no castelo ambulante do misterioso feiticeiro Howl, onde nada é bem o que parece.",
       motivo: "Pra quando a gente só quiser sentar, respirar e ficar bonito por dentro.",
-      trailer: "https://www.youtube.com/watch?v=ucidN3bnKQw"
+      trailer: "https://www.youtube.com/watch?v=PWhl-xGTraE"
     },
     {
       id: "antes-do-amanhecer",
@@ -157,7 +157,7 @@
       sinopse:
         "Mitsuha e Taki, dois adolescentes que nunca se conheceram, começam a trocar de corpo sem explicação — e aos poucos percebem que talvez estejam ligados por algo maior que os dois.",
       motivo: "Bonito, triste e um pouco mágico. Separa um lenço.",
-      trailer: "https://www.youtube.com/watch?v=e4dZhQaTJMk"
+      trailer: "https://www.youtube.com/watch?v=soQXM3XVvIU"
     },
     {
       id: "vantagens-de-ser-invisivel",
@@ -196,7 +196,7 @@
       sinopse:
         "Aos 21 anos, Tim descobre que os homens da sua família conseguem viajar no tempo — e usa esse dom para tentar acertar o que mais importa: as pessoas que ama.",
       motivo: "Leve, engraçado e emocionante na medida certa.",
-      trailer: "https://www.youtube.com/watch?v=QBiLGGM-xN4"
+      trailer: "https://www.youtube.com/watch?v=-0gX9g4Lxm8"
     }
   ];
 
@@ -389,16 +389,6 @@
     renderizarSessao();
   }
 
-  function limparSelecao() {
-    try {
-      localStorage.removeItem(CHAVE_SELECAO);
-    } catch (e) {
-      console.warn("Não foi possível limpar a seleção local.", e);
-    }
-    renderizarSessao();
-    mostrarToast("Escolha removida. Bora pensar em outro? 🎬");
-  }
-
   function recuperarSelecao() {
     try {
       return localStorage.getItem(CHAVE_SELECAO);
@@ -423,12 +413,8 @@
              onerror="this.src='assets/images/placeholder.svg'">
         <h4>${filme.titulo}</h4>
         <p>Temos um filme. Agora só falta decidir quando. 🍿</p>
-        <button class="sessao__limpar" id="btn-limpar-selecao" type="button">limpar escolha</button>
       </div>
     `;
-
-    const btnLimpar = $("#btn-limpar-selecao");
-    if (btnLimpar) btnLimpar.addEventListener("click", limparSelecao);
   }
 
   /* ------------------------------------------------------
@@ -483,25 +469,21 @@
       elFrase.classList.add("visivel");
 
       const ultima = indice === frasesIntro.length - 1;
-      // tempoVisivel = quanto tempo (em ms) cada frase fica na tela.
-      // Aumente estes números para deixar a leitura ainda mais lenta.
-      const tempoVisivel = ultima ? 2600 : 2200;
-      // pausaEntreFrases = intervalo (em ms) de tela apagada entre uma frase e a próxima.
-      const pausaEntreFrases = 600;
+      const tempoVisivel = ultima ? 1300 : 1100;
 
       timeouts.push(
         setTimeout(() => {
           if (cancelado) return;
           elFrase.classList.remove("visivel");
           if (ultima) {
-            timeouts.push(setTimeout(finalizarIntro, 900));
+            timeouts.push(setTimeout(finalizarIntro, 500));
             return;
           }
           timeouts.push(
             setTimeout(() => {
               indice += 1;
               mostrarProximaFrase();
-            }, pausaEntreFrases)
+            }, 350)
           );
         }, tempoVisivel)
       );
@@ -531,80 +513,6 @@
     window.scrollTo({ top: 0, behavior: "auto" });
     // pequeno atraso pra garantir que o layout já existe antes de observar
     requestAnimationFrame(observarRevelacoes);
-  }
-
-  /* ------------------------------------------------------
-     7.5 MÚSICA DE FUNDO
-     Para trocar a música: coloque um arquivo chamado
-     "trilha.mp3" dentro de assets/audio/. Se o arquivo não
-     existir, o botão de música simplesmente não aparece.
-  ------------------------------------------------------ */
-  const VOLUME_ALVO = 0.35; // volume máximo da música (0 a 1)
-  let musicaIniciada = false;
-  let fadeIntervalId = null;
-
-  function fadeVolume(audio, de, para, duracaoMs) {
-    clearInterval(fadeIntervalId);
-    const passos = 30;
-    const incremento = (para - de) / passos;
-    const intervalo = duracaoMs / passos;
-    let atual = de;
-    audio.volume = de;
-    fadeIntervalId = setInterval(() => {
-      atual += incremento;
-      const chegou = incremento >= 0 ? atual >= para : atual <= para;
-      audio.volume = Math.min(1, Math.max(0, chegou ? para : atual));
-      if (chegou) clearInterval(fadeIntervalId);
-    }, intervalo);
-  }
-
-  function iniciarMusica() {
-    if (musicaIniciada) return;
-    musicaIniciada = true;
-    const audio = $("#musica-fundo");
-    const btn = $("#btn-musica");
-    if (!audio || !btn) return;
-
-    audio.volume = 0;
-    const promessa = audio.play();
-    if (promessa && promessa.then) {
-      promessa
-        .then(() => {
-          fadeVolume(audio, 0, VOLUME_ALVO, 2200);
-          btn.hidden = false;
-          requestAnimationFrame(() => btn.classList.add("visivel"));
-        })
-        .catch(() => {
-          // autoplay bloqueado pelo navegador ou arquivo ausente — sem música, sem problema
-          musicaIniciada = false;
-        });
-    }
-  }
-
-  function configurarControleMusica() {
-    const audio = $("#musica-fundo");
-    const btn = $("#btn-musica");
-    const icone = $("#icone-musica");
-    if (!audio || !btn) return;
-
-    audio.addEventListener("error", () => {
-      btn.hidden = true;
-    });
-
-    btn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-        fadeVolume(audio, audio.volume, VOLUME_ALVO, 800);
-        btn.setAttribute("aria-pressed", "true");
-        btn.setAttribute("aria-label", "Pausar música");
-        icone.textContent = "♪";
-      } else {
-        audio.pause();
-        btn.setAttribute("aria-pressed", "false");
-        btn.setAttribute("aria-label", "Tocar música");
-        icone.textContent = "✕";
-      }
-    });
   }
 
   /* ------------------------------------------------------
@@ -667,11 +575,7 @@
     configurarModal();
     iniciarParticulas();
 
-    $("#btn-entrar").addEventListener("click", () => {
-      iniciarMusica();
-      iniciarSequenciaIntro();
-    });
-    configurarControleMusica();
+    $("#btn-entrar").addEventListener("click", iniciarSequenciaIntro);
     $("#btn-escolher").addEventListener("click", () => {
       $("#catalogo").scrollIntoView({
         behavior: reduzMovimento() ? "auto" : "smooth"
