@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Nossa Cinemateca</title>
+<meta name="description" content="Alguns filmes que eu gostaria de assistir com você.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================
+     BACKGROUND ATMOSFÉRICO (fixo, atrás de tudo)
+============================================= -->
+<div class="atmosfera" aria-hidden="true">
+  <div class="atmosfera__grao"></div>
+  <div class="atmosfera__mancha atmosfera__mancha--1"></div>
+  <div class="atmosfera__mancha atmosfera__mancha--2"></div>
+  <canvas id="particulas" aria-hidden="true"></canvas>
+</div>
+
+<!-- ============================================
+     HERO
+============================================= -->
+<section class="hero" id="hero">
+  <div class="hero__conteudo">
+    <span class="hero__icone" aria-hidden="true">✦</span>
+    <h1 class="hero__titulo">Nossa Cinemateca</h1>
+    <p class="hero__frase">algumas histórias que eu gostaria de viver com você</p>
+    <button class="botao botao--hero" id="btn-entrar" type="button">
+      <span>Entrar na nossa sessão</span>
+    </button>
+  </div>
+  <div class="hero__scroll-hint" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================
+     INTRODUÇÃO NARRATIVA (overlay)
+============================================= -->
+<div class="intro" id="intro" aria-hidden="true">
+  <button class="intro__pular" id="btn-pular" type="button">pular</button>
+  <p class="intro__frase" data-frase>Separei alguns filmes que eu gostaria de assistir com você...</p>
+</div>
+
+<!-- ============================================
+     CATÁLOGO
+============================================= -->
+<main class="catalogo" id="catalogo" hidden>
+
+  <header class="catalogo__topo reveal">
+    <p class="catalogo__eyebrow">Nossa Cinemateca</p>
+    <h2 class="catalogo__titulo">filmes que eu gostaria de assistir com você</h2>
+    <p class="catalogo__dica">Deslize, escolha um e me diga qual você quer ver primeiro. ❤️</p>
+  </header>
+
+  <!-- TOP 3 -->
+  <section class="secao secao--top3" id="top3" aria-labelledby="top3-titulo">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="top3-titulo">TOP 3 — Os que eu mais quero viver com você</h3>
+    </div>
+    <div class="top3__lista" id="top3-lista"></div>
+  </section>
+
+  <!-- CATEGORIAS -->
+  <section class="secao" data-categoria-secao="romance" aria-labelledby="tit-romance">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-romance">❤️ Romance</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="romance"></div>
+  </section>
+
+  <section class="secao" data-categoria-secao="aventura" aria-labelledby="tit-aventura">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-aventura">🕷️ Para ver juntos e ficar empolgado</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="aventura"></div>
+  </section>
+
+  <section class="secao" data-categoria-secao="noite" aria-labelledby="tit-noite">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-noite">🌙 Para uma noite tranquila</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="noite"></div>
+  </section>
+
+  <section class="secao" data-categoria-secao="pensar" aria-labelledby="tit-pensar">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-pensar">🧠 Para depois ficar discutindo o final</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="pensar"></div>
+  </section>
+
+  <section class="secao" data-categoria-secao="chorar" aria-labelledby="tit-chorar">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-chorar">😭 Para destruir nosso emocional</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="chorar"></div>
+  </section>
+
+  <section class="secao" data-categoria-secao="rir" aria-labelledby="tit-rir">
+    <div class="secao__cabecalho reveal">
+      <h3 class="secao__titulo" id="tit-rir">😂 Para não pensar demais</h3>
+    </div>
+    <div class="cards__lista" data-categoria-lista="rir"></div>
+  </section>
+
+  <!-- NOSSA PRÓXIMA SESSÃO -->
+  <section class="secao secao--sessao reveal" id="proxima-sessao" aria-labelledby="tit-sessao">
+    <h3 class="secao__titulo" id="tit-sessao">🎬 Nossa próxima sessão</h3>
+    <div class="sessao__card" id="sessao-conteudo">
+      <p class="sessao__vazio">Ainda não escolhemos o primeiro filme...</p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final reveal">
+    <p class="cta-final__texto">E então...<br>qual deles vai ser o primeiro?</p>
+    <button class="botao botao--cta" id="btn-escolher" type="button">
+      <span>Escolher nosso filme ❤️</span>
+    </button>
+  </section>
+
+  <footer class="rodape">
+    <p>Feito para duas pessoas, alguns filmes e várias horas de história. ❤️</p>
+  </footer>
+
+</main>
+
+<!-- ============================================
+     MODAL DE FILME
+============================================= -->
+<div class="modal" id="modal" hidden>
+  <div class="modal__fundo" id="modal-fundo"></div>
+  <div class="modal__janela" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+    <button class="modal__fechar" id="modal-fechar" type="button" aria-label="Fechar">✕</button>
+    <div class="modal__poster">
+      <img id="modal-poster" src="" alt="">
+    </div>
+    <div class="modal__conteudo">
+      <h3 class="modal__titulo" id="modal-titulo"></h3>
+      <p class="modal__meta" id="modal-meta"></p>
+      <p class="modal__sinopse" id="modal-sinopse"></p>
+      <div class="modal__motivo">
+        <p class="modal__motivo-label">Por que eu escolhi esse filme</p>
+        <p class="modal__motivo-texto" id="modal-motivo"></p>
+      </div>
+      <div class="modal__acoes">
+        <a class="botao botao--secundario" id="modal-trailer" href="#" target="_blank" rel="noopener noreferrer">▶ Assistir trailer</a>
+        <button class="botao botao--primario" id="modal-escolher" type="button">♡ Quero assistir</button>
+      </div>
+      <p class="modal__feedback" id="modal-feedback" aria-live="polite"></p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
